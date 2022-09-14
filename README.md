@@ -55,29 +55,57 @@ speed of sound in the air at 20ºC (68ºF) = 343m/s
 
 
 ### PROGRAM 
+~~~
+// Name:V.A.JITHENDRA.
+//Ref no.212221230043
+// C++ code
+//
+#define trigpin 2
+#define echopin 3
+long duration;
+int distance;
+void setup()
+{
+  pinMode(trigpin,OUTPUT);
+  pinMode(echopin,INPUT);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  digitalWrite(trigpin,LOW);
+  delay(20);
+  digitalWrite(trigpin,HIGH);
+  delay(20);
+  digitalWrite(trigpin,LOW);
+  //delay(20);
+  duration=pulseIn(echopin,HIGH);
+  distance=duration*0.034/2;
+  Serial.print("distance = ");
+  Serial.print(distance);
+  Serial.println("CM");
+  delay(500);
+  
+  
+}
+~~~
 
 
 
-
-
-
+### circuit
+![ex03](https://user-images.githubusercontent.com/94226297/190160621-8002d912-aa06-49e9-b227-00defc53a808.png)
+### Serial Monitor
+ ![ex03 1](https://user-images.githubusercontent.com/94226297/190162216-0004bc4d-9763-4899-b3b0-715449e39c86.png)
 ### Distance vs measurement table 
 
-			
- 
-			
-			
-			
+![table](https://user-images.githubusercontent.com/94226297/190163643-17f1ac23-ca92-4b3b-8add-d4a48fb515a1.jpg)
 
-![image](https://user-images.githubusercontent.com/36288975/190135379-52ebacd5-ccd5-460f-a4cd-4d0ad1d9b179.png)
-
+	
 			
-			
-			
-			
-			
-			Average error = sum/ number of readings 
- 
+		Average error = sum/ number of readings 
+ ~~~
+ Average Error=3.4/5 =0.68
+ ~~~
 
 
 
@@ -88,6 +116,6 @@ speed of sound in the air at 20ºC (68ºF) = 343m/s
 
 ### RESULTS
 
-
+Thus the distance value is measured in "CM" using ultrasonic sensor and error.
 
  
